@@ -1,0 +1,11 @@
+import streamlit as st
+import json
+from urllib.request import urlopen
+
+link = json.load(urlopen("https://dog.ceo/api/breeds/image/random"))
+st.image(link['message'])
+
+st.button("yeni bir köpek resmi getir")   # Buton tıklandığında True değeri alır. Ayrıca butona her basıldığında sayfayı da yenilemiş olur.
+
+
+##  yukarıdaki kodları pycharm'a yapıştırdıktan sonra terminal kısmına streamlit run main.py (main.py dosyanın adı. Sizin dosyanızın adı neyse onu yazmalısınız) yazıp çalışıtrırsak bu sayfayı çalıştırır.
