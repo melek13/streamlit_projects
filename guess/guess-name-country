@@ -1,0 +1,11 @@
+import streamlit as st
+import json
+from urllib.request import urlopen
+
+name = st.text_input("Enter your name   :")
+link = "https://api.nationalize.io?name=" + name
+#link = f"https://api.nationalize.io?name={name}"
+veri = json.load(urlopen(link))
+
+st.write(veri)
+st.table(veri['country'])
